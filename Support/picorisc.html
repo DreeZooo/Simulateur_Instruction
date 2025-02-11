@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide pico-RISC (TP1-2 ILM)</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+	<img class="site-logo" src="https://istic.univ-rennes.fr/sites/istic.univ-rennes.fr/files/logoisticfr.png" width="15%" alt="Accueil">
+
+    <h1>Aide pico-RISC (TP1-2 ILM)</h1>
+
+    <table id="instructionTable">
+        <tr>
+            <th>Op</th>
+            <th>Rd</th>
+            <th>Rs</th>
+            <th>Imm8</th>
+            <th>Assembly Language</th>
+            <th>Binary</th>
+            <th>Hexadecimal</th>
+        </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ 
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ <tr>
+     <td style="width: 4%;"><input type="text" style="width: 100%;" class="op bit4" placeholder="1100" maxlength="4" value="0000" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rd bit2" placeholder="01" maxlength="2" value="00" oninput="updateTable(this)"></td>
+     <td style="width: 2%;"><input type="text" style="width: 100%;" class="rs bit2" placeholder="10" maxlength="2" value="00"oninput="updateTable(this)"></td>
+     <td style="width: 8%;"><input type="text" style="width: 100%;" class="imm8 bit8" placeholder="10101010" maxlength="8" value="00000000" oninput="updateTable(this)"></td>
+     <td style="width: 15%;" class="assembly"></td>
+     <td style="width: 10%;" class="binary"></td>
+     <td style="width: 10%;" class="hex"></td>
+ </tr>
+ 
+ 
+         <!-- Add more rows for additional instructions -->
+    </table>
+
+	<hline>
+		
+ <!-- Add the Save button -->
+    <button onclick="saveTableContent()">Save as hexfile</button>
+
+    
+    <script>
+		const insnnames = [
+		'Rd = sext16(IMM8); PC=PC+1;',
+		'Rd = Rd + Rs; PC=PC+1;',
+		'Rd = Rs + sext16(IMM8); PC=PC+1;',
+		'Rd = Rd - Rs; PC=PC+1;',
+		'Rd = Rd ^ Rs ; PC=PC+1;',
+		'Rd = Rd | Rs ; PC=PC+1;',
+		'Rd = Rd & Rs ; PC=PC+1;',
+		'Rd = Rd >> 1 ; PC=PC+1;',
+		'Rd = Rd | IMM8; PC=PC+1;',
+		'Rd = Rd | (IMM8<<8); PC=PC+1;',
+		'Rd = mem[Rs] ; PC=PC+1;',
+		'mem[Rs]= Rd ; PC=PC+1;',
+		'if (Rd<Rs) PC=PC+sext(IMM8) else PC= PC+1;',
+		'if (Rd==Rs) PC=PC+sext(IMM8) else PC= PC+1;',
+		'Non défini',
+		'Non défini'
+	];
+
+		
+
+		const regnames = [
+		'R0',
+		'R1',
+		'R2',
+		'PC'
+			
+		];
+
+		
+		window.onload = function () {
+		            // Trigger updateTable once at startup for the initial values
+		            const inputs = document.querySelectorAll('input[type="text"]');
+		            inputs.forEach((input) => {
+		                updateTable(input);
+		            });
+		        };
+		
+        function updateTable(input) {
+            const row = input.parentNode.parentNode;
+            const op = row.querySelector('.op').value;
+            const rd = row.querySelector('.rd').value;
+            const rs = row.querySelector('.rs').value;
+            const imm8 = row.querySelector('.imm8').value;
+
+            const assemblyLanguage = getAssemblyLanguage(op, rd, rs, imm8);
+            const binaryInstruction = op + rd + rs + imm8;
+            const hexInstruction = parseInt(binaryInstruction, 2).toString(16).toUpperCase();
+
+            row.querySelector('.assembly').textContent = assemblyLanguage;
+            row.querySelector('.binary').textContent = binaryInstruction;
+            row.querySelector('.hex').textContent = `0x${hexInstruction}`;
+        }
+
+        function getAssemblyLanguage(op, rd, rs, imm8) {
+			
+			// Example: Retrieve instruction name for opCode '0010'
+				
+			console.log(`hello rd=${parseInt(rd, 2)}`);
+			console.log(`hello rs=${parseInt(rs, 2)}`);
+			console.log(`hello op=${parseInt(op, 2)}`);
+			const rdname = regnames[parseInt(rd, 2)];
+			const rsname = regnames[parseInt(rs, 2)];
+		
+			const insn = insnnames[parseInt(op, 2)];
+			console.log(`hello ${insn}`);
+			const insn2 = insn.replaceAll("Rd", rdname);
+			console.log(`hello ${insn}`);
+			const insn3 = insn2.replaceAll("Rs", rsname);
+			console.log(`hello ${insn}`);
+			const insn4 = insn3.replaceAll("IMM8", `0x${parseInt(imm8, 2).toString(16)}`);
+			console.log(`hello ${insn}`);
+			
+			console.log(`hello rsname=${rsname}`);
+			console.log(`hello rdname=${rdname}`);
+            return `${insn4}`;
+
+//            return `${insn} ${rdname}, ${rsname}, 0x${parseInt(imm8, 2).toString(16)}`;
+        }
+		
+    // Function to save table content to a file
+        function saveTableContent() {
+            const table = document.getElementById('instructionTable');
+            const rows = table.getElementsByTagName('tr');
+            const data = [];
+
+			data.push('v2.0 raw');
+			
+			line = ''
+			nb=0;
+            // Loop through each row and collect data
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                const rowData = [];
+				console.log(`row ${i} nbcell  ${cells.length}`);
+				
+	            for (let k = 0; k < cells.length; k++) {
+					console.log(`cell ${k} -> ${cells[k].textContent.replace('0x','')}`);
+				}
+				// const op = cells[0].textContent
+				// const rd = cells[1].textContent
+				// const rs = cells[2].textContent
+				// const imm8 = cells[3].textContent
+					            // const assemblyLanguage = getAssemblyLanguage(op, rd, rs, imm8);
+			            // 					            const binaryInstruction = op + rd + rs + imm8;
+			            // 					            const hexInstruction = parseInt(binaryInstruction, 2).toString(16).toUpperCase();
+
+
+				                // Join the data with a delimiter and add to the main daarry
+						if (nb==0) {
+							line = `${cells[6].textContent.replace('0x','')}`
+						} else {
+							line = `${line} ${cells[6].textContent.replace('0x','')}`
+						}
+						if (nb==8) {
+							 data.push(line);
+							 nb =0;
+							 line = '';
+						} else {
+							nb = nb+1;
+						}
+						
+				 
+         }
+		 if (nb!=0) {
+		 	 data.push(line);
+		 }
+		 
+            // Create a Blob with the data
+            const blob = new Blob([data.join('\n')], { type: 'text/plain' });
+
+            // Create a download link and trigger the click event
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'ram.hex';
+            link.click();
+        }
+    </script>
+</body>
+</html>
