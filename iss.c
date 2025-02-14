@@ -196,7 +196,7 @@ int cpu(char *buffer){
         break;
 
       case INF:
-        printf("===========INF===========\n");
+        printf("\n===========INF===========\n");
         printf("INF : R%d < R%d ?\n", Rd, Rs);
         printf("R%d = 0x%04X (%d), R%d = 0x%04X (%d)\n", Rd, regs[Rd], (int16_t)regs[Rd], Rs, regs[Rs], (int16_t)regs[Rs]);
         if (regs[Rd] < regs[Rs]) {
@@ -207,7 +207,7 @@ int cpu(char *buffer){
         break;
 
       case EQUAL:
-        printf("===========EQUAL===========\n");
+        printf("\n===========EQUAL===========\n");
         printf("EQUAL : R%d == R%d ?\n", Rd, Rs);
         printf("R%d = 0x%04X (%d), R%d = 0x%04X (%d)\n", Rd, regs[Rd], (int16_t)regs[Rd], Rs, regs[Rs], (int16_t)regs[Rs]);
         if (regs[Rd] == regs[Rs]) {
