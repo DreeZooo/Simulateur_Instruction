@@ -82,7 +82,7 @@ int cpu(char *buffer){
       halt_solution =0;
     }
 
-    if(halt_solution >= 2){
+    if(halt_solution >= 10){
       break;
     }
 
